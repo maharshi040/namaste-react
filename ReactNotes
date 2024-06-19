@@ -1,0 +1,61 @@
+React Notes
+
+1. React.createElement().??
+	create Javascript object which contain properties like 
+	a. type - type of HTML element, 
+	b.props, 
+		children: "Hello World from React"
+		id: "heading"
+	c. Key
+	d. ref
+	
+	takes 3 arguments
+	1. HTML elements
+	2. takes an empty object, which can help in mentioning required attributes for an element like id and class.
+	3. actual value
+	
+	EX: React.createElement("h1", {id:"heading"}, "Hello React");
+
+2. React.createRoot()
+	createRoot lets you create a root to display React components inside a browser DOM node. const root = createRoot(domNode, options?).
+
+	
+3. <div id="parent"> <div id="child"><h1>H1 TAG</h1></div> </div>
+	create this structure in React
+	
+	const parent = React.createElement("div", { id: "parent" },
+    React.createElement("div", { id: "child" },
+        React.createElement("h1", {}, "I'm a h1 tag")
+		)
+	);
+
+	root.render(parent);
+
+4. What is render()
+	React.CreateElement actually is js object which has some properties which I mentioned above.
+	now, render() render render this JS object to HTML elements into browser
+	ReactElement(object) => HTML(browser understands);
+
+5. Follow up question to 3, how to create sibling elements 
+	<div id="parent"> 
+		<div id="child">
+			<h1>H1 TAG</h1>
+			<h2>H2 Tag</h2>
+		</div>
+	</div>
+	
+	3rd argument, declare in array with the sibling elements
+	
+	const parent = React.createElement("div", { id: "parent" },
+        React.createElement("div", { id: "child1" },
+            [
+                React.createElement("h1", { key: "h1" }, "I'm a h1 tag"),
+                React.createElement("h2", { key: "h2" }, "h2 Tag")
+            ]
+        )
+6.
+
+	
+
+	
+	
